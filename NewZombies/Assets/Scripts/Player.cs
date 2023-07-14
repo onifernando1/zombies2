@@ -23,9 +23,7 @@ public class Player : MonoBehaviour
     void HandlePlayerMovement()
     {
         Vector2 playerMovementVector = inputManager.GetPlayerMovement();
-        Debug.Log(playerMovementVector);
         playerMovementVector = playerMovementVector.normalized;
-        Debug.Log(playerMovementVector);
         Vector3 movedir = transform.forward * playerMovementVector.y + transform.right * playerMovementVector.x;
         movedir.y = 0;
         transform.position += movedir * moveSpeed * Time.deltaTime;
